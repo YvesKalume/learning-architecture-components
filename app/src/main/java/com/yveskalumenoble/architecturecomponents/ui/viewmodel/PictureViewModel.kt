@@ -28,7 +28,8 @@ class PictureViewModel(private val pictureRepository: PictureRepository) : ViewM
 
     override fun onResponse(call: Call<PictureResponse>, response: Response<PictureResponse>) {
         if (response.isSuccessful){
-            _picturesResponse.postValue(response.body())
+            Log.d("PictureViewModel", "success")
+            _picturesResponse.value = response.body()
         }
     }
 }

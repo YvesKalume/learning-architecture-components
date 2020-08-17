@@ -33,7 +33,7 @@ val retrofitModule = module {
     fun provideRetrofit() : Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(CONSTANT.BASE_URL)
+            .baseUrl("https://pixabay.com/")
             .build()
     }
 

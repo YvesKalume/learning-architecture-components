@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 
 import com.yveskalumenoble.architecturecomponents.R
 import com.yveskalumenoble.architecturecomponents.databinding.FragmentPicturesBinding
@@ -31,10 +30,10 @@ class PicturesFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_pictures,container,false)
 
         val adapter = PictureAdapter()
+        binding.recyclerView.adapter = adapter
         pictureViewModel.pictures.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it.hits)
         })
-        binding.recyclerView.adapter = adapter
 
         return binding.root
     }
