@@ -1,0 +1,2 @@
+rootProject.name='Learning Architecture Components'
+include ':app'
