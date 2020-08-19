@@ -4,5 +4,5 @@ import com.yveskalumenoble.architecturecomponents.data.api.PictureApi
 import com.yveskalumenoble.architecturecomponents.util.CONSTANT
 
 class PictureRepository(private val api: PictureApi) {
-    fun getAll() = api.getPictures(CONSTANT.API_KEY)
+    fun getAll() = api.getPicturesAsync(CONSTANT.API_KEY)
 }

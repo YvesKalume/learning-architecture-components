@@ -22,7 +22,6 @@
                 android:id="@+id/imageCardview"
                 android:layout_width="0dp"
                 android:layout_height="250dp"
-                app:cardCornerRadius="8dp"
                 app:cardElevation="0.5dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

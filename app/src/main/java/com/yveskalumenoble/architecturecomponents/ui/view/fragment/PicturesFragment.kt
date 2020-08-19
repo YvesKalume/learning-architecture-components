@@ -31,7 +31,7 @@ class PicturesFragment : Fragment() {
 
         val adapter = PictureAdapter()
         binding.recyclerView.adapter = adapter
-        pictureViewModel.pictures.observe(viewLifecycleOwner, Observer {
+        pictureViewModel.picturesRespone.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it.hits)
         })
 

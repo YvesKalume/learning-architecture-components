@@ -1,5 +1,6 @@
 package com.yveskalumenoble.architecturecomponents.app.di
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.yveskalumenoble.architecturecomponents.data.api.PictureApi
 import com.yveskalumenoble.architecturecomponents.data.repository.PictureRepository
 import com.yveskalumenoble.architecturecomponents.ui.viewmodel.PictureViewModel
@@ -33,6 +34,7 @@ val retrofitModule = module {
     fun provideRetrofit() : Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .baseUrl("https://pixabay.com/")
             .build()
     }
