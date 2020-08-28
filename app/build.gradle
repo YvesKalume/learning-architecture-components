@@ -9,6 +9,7 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.yveskalumenoble.architecturecomponents"
         minSdkVersion 21
         targetSdkVersion 29
@@ -55,6 +56,9 @@ dependencies {
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+    //multidex
+    implementation "androidx.multidex:multidex:2.0.1"
 
 
     //room

@@ -1,10 +1,9 @@
 package com.yveskalumenoble.architecturecomponents.app
 
 import android.app.Application
-import com.yveskalumenoble.architecturecomponents.app.di.apiModule
-import com.yveskalumenoble.architecturecomponents.app.di.repositoryModule
-import com.yveskalumenoble.architecturecomponents.app.di.retrofitModule
-import com.yveskalumenoble.architecturecomponents.app.di.viewModelModule
+import android.content.Context
+import androidx.multidex.MultiDex
+import com.yveskalumenoble.architecturecomponents.app.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -16,7 +15,12 @@ class App : Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@App)
-            modules(listOf(viewModelModule, repositoryModule, apiModule, retrofitModule))
+            modules(listOf(viewModelModule, repositoryModule, apiModule, retrofitModule, databaseModule))
         }
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 }
