@@ -12,7 +12,7 @@ Some of it's concepts are used in this project !
 - [x] Koin (Dependency injection)
 
 ##### Note:
-This app displays pictures from [Pixabay](https://pixabay.com) api.
+This app displays pictures from [Pixabay](https://pixabay.com/api/docs/) api.
 
 ### Docs
 - [Jetpack](https://developer.android.com/jetpack)
