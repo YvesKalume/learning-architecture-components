@@ -3,13 +3,13 @@ Android Jetpack were developed with the aim of developing robust,maintainable an
 Some of it's concepts are used in this project !
 ### Used Concepts
 - [x] ViewModel
--[x] LiveData
--[x] Retrofit
--[x] Room
--[x] Coroutines
--[ ] Paging 3
--[x] Navigation
--[x] Koin (Dependency injection)
+- [x] LiveData
+- [x] Retrofit
+- [x] Room
+- [x] Coroutines
+- [ ] Paging 3
+- [x] Navigation
+- [x] Koin (Dependency injection)
 
 ##### Note:
 This app displays pictures from [Pixabay](https://pixabay.com) api.
