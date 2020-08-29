@@ -2,7 +2,7 @@
 Android Jetpack were developed with the aim of developing robust,maintainable and testable android apps  
 Some of it's concepts are used in this project !
 ### Used Concepts
--[x] ViewModel
+- [x] ViewModel
 -[x] LiveData
 -[x] Retrofit
 -[x] Room
