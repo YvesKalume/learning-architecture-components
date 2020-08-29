@@ -34,7 +34,7 @@ class PicturesFragment : Fragment(),OnItemClickListener {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_pictures,container,false)
 
         val adapter = PictureAdapter(this)
-        binding.recyclerView.adapter = adapter
+        binding.adapter = adapter
         pictureViewModel.pictures.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
