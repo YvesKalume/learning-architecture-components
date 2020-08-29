@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.yveskalumenoble.architecturecomponents.data.entity.Picture
 import com.yveskalumenoble.architecturecomponents.databinding.PictureItemBinding
+import com.yveskalumenoble.architecturecomponents.util.OnItemClickListener
 
-class PictureAdapter : ListAdapter<Picture,PictureAdapter.PictureViewHolder>(Companion) {
+class PictureAdapter(private val itemClickListener: OnItemClickListener) : ListAdapter<Picture,PictureAdapter.PictureViewHolder>(Companion) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PictureViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -17,9 +18,14 @@ class PictureAdapter : ListAdapter<Picture,PictureAdapter.PictureViewHolder>(Com
     }
 
     override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
-        val picture = getItem(position)
+        val item = getItem(position)
         val binding = holder.binding
-        binding.picture = picture
+        binding.apply {
+            picture = item
+            root.setOnClickListener {
+                itemClickListener.onItemClick(item)
+            }
+        }
     }
 
     companion object : DiffUtil.ItemCallback<Picture>(){

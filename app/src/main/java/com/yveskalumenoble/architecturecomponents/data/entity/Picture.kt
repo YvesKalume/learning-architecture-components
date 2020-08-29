@@ -1,10 +1,13 @@
 package com.yveskalumenoble.architecturecomponents.data.entity
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "pictures")
+@Parcelize
 data class Picture(
     @PrimaryKey var id: String,
     val pageUrl: String?,
@@ -28,4 +31,4 @@ data class Picture(
     val user_id: String?,
     val user: String?,
     val userImageURL: String?
-)
+) : Parcelable

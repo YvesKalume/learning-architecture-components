@@ -1,8 +1,6 @@
 package com.yveskalumenoble.architecturecomponents.app
 
 import android.app.Application
-import android.content.Context
-import androidx.multidex.MultiDex
 import com.yveskalumenoble.architecturecomponents.app.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,10 +15,5 @@ class App : Application() {
             androidContext(this@App)
             modules(listOf(viewModelModule, repositoryModule, apiModule, retrofitModule, databaseModule))
         }
-    }
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
     }
 }

@@ -6,5 +6,17 @@
     <fragment
         android:id="@+id/picturesFragment"
         android:name="com.yveskalumenoble.architecturecomponents.ui.view.fragment.PicturesFragment"
-        android:label="PicturesFragment" />
+        android:label="PicturesFragment" >
+        <action
+            android:id="@+id/action_picturesFragment_to_singlePictureFragment"
+            app:destination="@id/singlePictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singlePictureFragment"
+        android:name="com.yveskalumenoble.architecturecomponents.ui.view.fragment.SinglePictureFragment"
+        android:label="SinglePictureFragment" >
+        <argument
+            android:name="picture"
+            app:argType="com.yveskalumenoble.architecturecomponents.data.entity.Picture" />
+    </fragment>
 </navigation>
